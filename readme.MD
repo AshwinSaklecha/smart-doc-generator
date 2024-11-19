@@ -31,7 +31,7 @@ A Python-based tool designed to automatically generate well-structured markdown 
    git clone https://github.com/AshwinSaklecha/smart-doc-generator.git
    
 2. Navigate into the project directory:
-   bash
+
    cd smart-doc-generator
    
 3. Install the required dependencies: os, ast, inspect, typing
