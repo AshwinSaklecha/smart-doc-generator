@@ -237,4 +237,4 @@ def _format_arguments(args):
 # Example usage: You can call this to process the directory and generate documentation
 directory_path = "D:\megaProject\codeFiles"  # Use raw string or escape backslashes
 functions_and_classes = parse_code_from_directory(directory_path)
-generate_documentation(functions_and_classes, style="detailed")  # or "detailed"
+generate_documentation(functions_and_classes, style="brief")  # or "detailed"
