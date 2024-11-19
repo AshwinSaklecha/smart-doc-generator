@@ -1,38 +1,50 @@
-# Class 1: Dog
-class Dog:
-    def __init__(self, name, breed):
-        self.name = name
-        self.breed = breed
+import os
+import ast
 
-    def bark(self):
-        return f"{self.name} says Woof!"
+def parse_code_from_directory(directory_path):
+    all_functions = []
+    all_classes = []
 
-    def fetch(self, item):
-        return f"{self.name} fetched the {item}!"
+    # Iterate over each file in the directory
+    for filename in os.listdir(directory_path):
+        file_path = os.path.join(directory_path, filename)
 
-# Class 2: Owner
-class Owner:
-    def __init__(self, name, dog):
-        self.name = name
-        self.dog = dog
+        # Only process Python files
+        if filename.endswith(".py"):
+            with open(file_path, 'r') as file:
+                code = file.read()
 
-    def play_with_dog(self):
-        print(f"{self.name} is playing with {self.dog.name}.")
-        print(self.dog.bark())
+            # Parse the code into an Abstract Syntax Tree (AST)
+            tree = ast.parse(code)
+            
+            # Extract functions and their details
+            functions = []
+            classes = []
+            
+            for node in tree.body:
+                if isinstance(node, ast.FunctionDef):
+                    function_info = {
+                        "name": node.name,
+                        "args": [arg.arg for arg in node.args.args],  # Extracting function arguments
+                        "docstring": ast.get_docstring(node)  # Extracting docstring
+                    }
+                    functions.append(function_info)
 
-    def walk_dog(self):
-        print(f"{self.name} is walking with {self.dog.name}.")
-        print(f"{self.dog.name} is wagging its tail.")
+                if isinstance(node, ast.ClassDef):
+                    class_info = {
+                        "name": node.name,
+                        "docstring": ast.get_docstring(node)  # Extracting class docstring
+                    }
+                    classes.append(class_info)
+            
+            # Add the functions and classes to the global lists
+            all_functions.append({"file": filename, "functions": functions})
+            all_classes.append({"file": filename, "classes": classes})
 
-# Functions outside of classes
-def greet_owner(owner_name):
-    return f"Hello, {owner_name}! Welcome to the park."
+    return all_functions, all_classes
 
-def dog_food(dog_breed):
-    if dog_breed.lower() == "beagle":
-        return "Beagle food: Special mix of meats and vegetables."
-    else:
-        return "Dog food: Regular kibble."
-
-def display_info(owner, dog):
-    print(f"Owner: {owner.name}, Dog: {dog.name}, Breed: {dog.breed}")
+# Example usage
+# directory_path = "your_code_directory"  # Replace with the path to your code directory
+# functions, classes = parse_code_from_directory(directory_path)
+# print(f"Functions: {functions}")
+# print(f"Classes: {classes}")
