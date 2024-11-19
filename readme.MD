@@ -27,7 +27,7 @@ A Python-based tool designed to automatically generate well-structured markdown 
 ## Installation
 
 1. Clone the repository:
-   bash
+   
    git clone https://github.com/AshwinSaklecha/smart-doc-generator.git
    
 2. Navigate into the project directory:
