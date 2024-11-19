@@ -34,9 +34,7 @@ A Python-based tool designed to automatically generate well-structured markdown 
    bash
    cd smart-doc-generator
    
-3. Install the required dependencies:
-   bash
-   pip install -r requirements.txt
+3. Install the required dependencies: os, ast, inspect, typing
    
 
 ## Usage
