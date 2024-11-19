@@ -1,6 +1,3 @@
-Here's the content you can directly paste into your README.md file for GitHub:
-
-markdown
 # Smart Code Documentation Generator
 
 A Python-based tool designed to automatically generate well-structured markdown documentation for codebases. The tool traverses through directories containing multiple Python files, extracts functions, classes, and other relevant details, and produces a cohesive documentation file.
@@ -81,8 +78,3 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 - Python **AST module** for parsing and analyzing the code.
 - The open-source community for tools and libraries that made this project possible.
-
-<!-- 
-### Notes:
-- Replace yourusername in the repository URL with your actual GitHub username.
-- Make sure that requirements.txt is properly defined in your project to include all dependencies. -->
