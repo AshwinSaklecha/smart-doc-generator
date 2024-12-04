@@ -1,80 +1,108 @@
-# Smart Code Documentation Generator
+# 📚 Smart Code Documentation Generator
 
-A Python-based tool designed to automatically generate well-structured markdown documentation for codebases. The tool traverses through directories containing multiple Python files, extracts functions, classes, and other relevant details, and produces a cohesive documentation file.
+A powerful Python-based tool that automatically generates well-structured markdown documentation for your codebases. This tool intelligently traverses through directories containing Python files, extracts functions, classes, and other relevant details to produce comprehensive documentation.
 
-## Features
+## ✨ Features
 
-- **Automatic Parsing**: Scans a directory and extracts information about functions, classes, and imports.
-- **Comprehensive Documentation**:
-  - Supports both detailed and brief styles of documentation.
-  - Generates a Table of Contents for easy navigation.
-- **Handles Multiple Files**: Works seamlessly with codebases containing multiple Python files.
-- **Error Handling**: Gracefully manages exceptions and reports issues with problematic files.
+- 🔍 **Automatic Parsing**
+  - Scans directories and extracts information about functions, classes, and imports
+  - Intelligent recognition of code structure and relationships
 
-## How It Works
+- 📖 **Comprehensive Documentation**
+  - Supports both detailed and brief documentation styles
+  - Generates an organized Table of Contents for easy navigation
+  - Clean and readable markdown output
 
-1. **Directory Parsing**:
-   - Recursively scans a specified directory to find all Python files.
-   - Extracts module-level docstrings, functions, classes, imports, and other metadata.
+- 📁 **Multi-File Support**
+  - Seamlessly handles codebases with multiple Python files
+  - Maintains proper structure and relationships between files
 
-2. **Documentation Generation**:
-   - Creates a markdown file with a structured format, including docstrings, function signatures, class definitions, and more.
-   - Provides options for different styles of documentation: detailed (including all information) and brief (key details only).
+- ⚠️ **Error Handling**
+  - Gracefully manages exceptions during parsing
+  - Provides detailed reports for problematic files
+  - Ensures documentation completion even with partial failures
 
-## Installation
+## 🛠️ How It Works
+
+### Directory Parsing
+1. Recursively scans the specified directory for Python files
+2. Extracts essential information including:
+   - Module-level docstrings
+   - Function definitions and signatures
+   - Class hierarchies and methods
+   - Import statements and dependencies
+   - Additional metadata
+
+### Documentation Generation
+- Creates structured markdown files with organized sections
+- Supports multiple documentation styles:
+  - Detailed: Complete information including imports, decorators, and docstrings
+  - Brief: Essential information for quick reference
+
+## 📥 Installation
 
 1. Clone the repository:
-   
+   ```bash
    git clone https://github.com/AshwinSaklecha/smart-doc-generator.git
-   
-2. Navigate into the project directory:
+   ```
 
+2. Navigate to the project directory:
+   ```bash
    cd smart-doc-generator
-   
-3. Install the required dependencies: os, ast, inspect, typing
-   
+   ```
 
-## Usage
+3. Install required dependencies:
+   - os
+   - ast
+   - inspect
+   - typing
 
-1. Update the `directory_path` in the script to point to your codebase:
-   python
+## 🚀 Usage
+
+1. Update the `directory_path` in your script:
+   ```python
    directory_path = "path_to_your_codebase"
-   
+   ```
+
 2. Run the script:
-   bash
+   ```bash
    python main.py
-   
-3. View the generated documentation:
-   - The markdown file `documentation.md` will be created in the project directory.
+   ```
 
-## Options
+3. Access your documentation:
+   - Find the generated `documentation.md` in the project directory
 
-### Documentation Style:
+## ⚙️ Configuration Options
 
-- `brief`: Only essential information (default).
-- `detailed`: Complete information, including imports, decorators, and docstrings.
+### Documentation Styles
 
-You can switch styles by passing `style="detailed"` or `style="brief"` to the `generate_documentation` function.
+- `brief`: Concise documentation with essential information (default)
+- `detailed`: Comprehensive documentation including all available information
 
-## Example
+To switch styles, modify the `generate_documentation` function call:
 
-Here's an example of how to use the tool in your script:
-
-python
-directory_path = "D:\\megaProject\\codeFiles"  # Use raw string or escape backslashes
+```python
+directory_path = r"D:\megaProject\codeFiles"  # Use raw string
 functions_and_classes = parse_code_from_directory(directory_path)
-generate_documentation(functions_and_classes, style="brief")  # or "detailed"
+generate_documentation(functions_and_classes, style="detailed")  # or "brief"
+```
 
+## 👥 Contributing
 
-## Contributing
+We welcome contributions! Feel free to:
+- Open issues for bugs or feature requests
+- Submit pull requests with improvements
+- Share ideas for enhancing the tool
 
-Feel free to open issues or submit pull requests for improvements and new features. All contributions are welcome!
+## 📄 License
 
-## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+## 🙏 Acknowledgements
 
-## Acknowledgements
+- Python **AST module** for robust code parsing and analysis
+- The amazing open-source community for inspiration and tools
+- All contributors who help improve this project
 
-- Python **AST module** for parsing and analyzing the code.
-- The open-source community for tools and libraries that made this project possible.
+---
+Created with ❤️ by [Ashwin Saklecha](https://github.com/AshwinSaklecha)
